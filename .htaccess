@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^users/register$ users/register.php
+RewriteRule ^users/login$ users/login.php
+
+# blocked paths
+RewriteRule ^dbconn.php$ 404.php
+RewriteRule ^functions.php$ 404.php
+RewriteRule ^.htaccess.php$ 404.php
