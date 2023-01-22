@@ -13,7 +13,7 @@ include_once("inc/navbar.php") ?>
 <main>
     <div class="grid grid-cols-1 gap-4">
         <h1 class="text-center text-4xl mt-4">Welcome to coffee ordering system</h1>
-        <?php include_once("inc/home/menu.php") ?>
+        <?php include_once("inc/products/menu.php") ?>
         <div class="container mx-auto">
             <?php include_once("inc/message.php") ?>
         </div>

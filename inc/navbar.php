@@ -1,7 +1,12 @@
 <div class="text-white bg-orange-500 py-2 px-4">
     <div class="container mx-auto flex justify-between items-center">
-        <div>
-            <a href="<?= BASE_URL ?>" class="text-2xl">Coffee Shop</a>
+        <div class="flex items-center">
+            <a href="<?= BASE_URL ?>" class="text-2xl mr-5">Coffee Shop</a>
+            <ul>
+                <li>
+                    <a href="<?= BASE_URL ?>products">My Products</a>
+                </li>
+            </ul>
         </div>
         <nav>
             <?php if ( !is_authenticated() ): ?>

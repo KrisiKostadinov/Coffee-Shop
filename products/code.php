@@ -9,7 +9,7 @@ if ( !empty($_POST) && isset($_POST["create"]) ) {
     $name = $_POST["name"];
     $price = $_POST["price"];
     $quantity = $_POST["quantity"];
-    $user_id = $_SESSION["user"]["user_id"];
+    $user_id = $_SESSION["user"]["id"];
 
     if ( empty($name) || empty($price) || empty($quantity) ) {
         $_SESSION["message"] = "All fields are required";
@@ -18,7 +18,7 @@ if ( !empty($_POST) && isset($_POST["create"]) ) {
 
     $query = "INSERT INTO products
         (name, price, quantity, user_id)
-        VALUES ('$name', $price, $quantity, $user_id)";
+        VALUES ('$name', '$price', $quantity, $user_id)";
     try {
         $query_run = mysqli_query($conn, $query);
     } catch (Exception $error) {
@@ -26,7 +26,7 @@ if ( !empty($_POST) && isset($_POST["create"]) ) {
     }
 
     if ( !$query_run ) {
-        $_SESSION["message"] = "Database problem";
+        $_SESSION["message"] = "Database problem: " . mysqli_error($conn);
         redirect("products/create");
     }
 

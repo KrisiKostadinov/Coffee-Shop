@@ -7,6 +7,7 @@ RewriteRule ^users/logout/?$ users/logout.php
 
 # products
 RewriteRule ^products/create/?$ products/create.php
+RewriteRule ^products/?$ products/index.php
 
 # blocked paths
 RewriteRule ^dbconn.php$ 404.php
