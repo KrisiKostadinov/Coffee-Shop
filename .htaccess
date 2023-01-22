@@ -3,6 +3,7 @@ RewriteEngine On
 # users and sessions
 RewriteRule ^users/register/?$ users/register.php
 RewriteRule ^users/login/?$ users/login.php
+RewriteRule ^users/logout/?$ users/logout.php
 
 # products
 RewriteRule ^products/create/?$ products/create.php

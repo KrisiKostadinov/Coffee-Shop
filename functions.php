@@ -7,3 +7,10 @@ function redirect($value, $code = 200) {
     header("Location: " . BASE_URL . $value);
     exit;
 }
+
+function is_authenticated() {
+    if ( isset($_SESSION["user"]) ) {
+        return true;
+    }
+    return false;
+}

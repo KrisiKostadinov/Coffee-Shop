@@ -1,12 +1,18 @@
 <?php $meta_title = "Sign In" ?>
 <?php $meta_description = "Sign In to sell products with own coffee shop." ?>
 
-<?php include_once("../functions.php") ?>
-<?php include_once("../inc/header.php") ?>
-<?php include_once("../dbconn.php") ?>
-<?php session_start() ?>
+<?php
+    session_start();
+    include_once("../functions.php");
 
-<?php include_once("../inc/navbar.php") ?>
+    if (is_authenticated()) {
+        redirect("");
+    }
+
+    include_once("../inc/header.php");
+    include_once("../dbconn.php");
+    include_once("../inc/navbar.php");
+?>
 
 <main>
     <div class="text-center md:w-1/3 mx-auto">

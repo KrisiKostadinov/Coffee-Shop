@@ -129,5 +129,9 @@ else if ( !empty($_POST) && isset($_POST["login"]) ) {
     $_SESSION["message"] = "Successfully Login";
     $_SESSION["access_token"] = $access_token;
     $_SESSION["access_token_expiry"] = $access_token_expiry;
+    $_SESSION["user"] = [
+        "id" => $user_id,
+        "fullname" => $user["fullname"],
+    ];
     redirect("");
 }
