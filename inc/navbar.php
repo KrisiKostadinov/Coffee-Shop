@@ -2,11 +2,13 @@
     <div class="container mx-auto flex justify-between items-center">
         <div class="flex items-center">
             <a href="<?= BASE_URL ?>" class="text-2xl mr-5">Coffee Shop</a>
+            <?php if ( is_authenticated() ): ?>
             <ul>
                 <li>
                     <a href="<?= BASE_URL ?>products">My Products</a>
                 </li>
             </ul>
+            <?php endif; ?>
         </div>
         <nav>
             <?php if ( !is_authenticated() ): ?>

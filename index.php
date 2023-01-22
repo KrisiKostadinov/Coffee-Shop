@@ -11,13 +11,19 @@ include_once("dbconn.php");
 include_once("inc/navbar.php") ?>
 
 <main>
-    <div class="grid grid-cols-1 gap-4">
-        <h1 class="text-center text-4xl mt-4">Welcome to coffee ordering system</h1>
-        <?php include_once("inc/products/menu.php") ?>
-        <div class="container mx-auto">
-            <?php include_once("inc/message.php") ?>
-        </div>
-        <?php include_once("inc/home/order.php") ?>
+    <div class="flex flex-col gap-4">
+        <?php if ( !is_authenticated() ): ?>
+            <h1 class="text-center text-4xl mt-4">Welcome to coffee ordering system</h1>
+        <?php endif; ?>
+        <?php if ( is_authenticated() ): ?>
+            <div class="container mx-auto mt-5">
+                <?php include_once("inc/message.php") ?>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5 px-5">
+                <?php include_once("inc/products/menu.php") ?>
+                <?php include_once("inc/products/order.php") ?>
+            </div>
+        <?php endif; ?>
     </div>
 </main>
 

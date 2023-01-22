@@ -9,7 +9,7 @@ function redirect($value, $code = 200) {
 }
 
 function is_authenticated() {
-    if ( isset($_SESSION["user"]) ) {
+    if ( isset($_SESSION["user"]) && intval($_SESSION["access_token_expiry"]) > time() ) {
         return true;
     }
     return false;

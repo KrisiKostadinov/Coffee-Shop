@@ -9,13 +9,13 @@ if ( $query_run ) {
 }
 ?>
 
-<div class="container mx-auto">
-    <ul class="grid grid-cols-8 gap-5">
+<div class="w-full">
+    <h2 class="text-2xl mb-5">Menu</h2>
+    <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
         <?php foreach($products as $product): ?>
-            <a
-                href="?key=<?= $product["name"] ?>"
-                class="w-40 h-40 flex justify-center items-center rounded-lg shadow border-4 text-2xl">
-                <span><?= $product["name"] ?></span>
+            <a href="?key=<?= $product["id"] ?>" class="flex flex-col justify-center items-center rounded-lg shadow border-4 py-9">
+                <span class="md:text-lg text-2xl"><?= $product["name"] ?></span>
+                <span class="text-lg">$<?= number_format($product["price"], 2) ?></span>
             </a>
         <?php endforeach; ?>
     </ul>

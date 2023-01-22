@@ -4,6 +4,11 @@
 <?php
 session_start();
 include_once("../functions.php");
+
+if ( !is_authenticated() ) {
+    redirect("users/login");
+}
+
 include_once("../inc/header.php");
 
 include_once("../inc/navbar.php");
