@@ -9,6 +9,7 @@ RewriteRule ^users/logout/?$ users/logout.php
 RewriteRule ^products/create/?$ products/create.php
 RewriteRule ^products/?$ products/index.php
 RewriteRule ^products/delete/([0-9]+)$ products/delete.php?id=$1
+RewriteRule ^checkout/([0-9]+)$ checkout/create.php?product_id=$1
 
 # blocked paths
 RewriteRule ^dbconn.php$ 404.php

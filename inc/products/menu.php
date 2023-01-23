@@ -13,7 +13,7 @@ if ( $query_run ) {
     <h2 class="text-2xl mb-5">Menu</h2>
     <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
         <?php foreach($products as $product): ?>
-            <a href="?key=<?= $product["id"] ?>" class="flex flex-col justify-center items-center rounded-lg shadow border-4 py-9">
+            <a href="checkout/<?= $product["id"] ?>" class="flex flex-col justify-center items-center rounded-lg shadow border-4 py-9">
                 <span class="md:text-lg text-2xl"><?= $product["name"] ?></span>
                 <span class="text-lg">$<?= number_format($product["price"], 2) ?></span>
             </a>

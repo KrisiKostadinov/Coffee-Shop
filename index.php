@@ -21,7 +21,7 @@ include_once("inc/navbar.php") ?>
             </div>
             <div class="grid md:grid-cols-2 gap-5 px-5">
                 <?php include_once("inc/products/menu.php") ?>
-                <?php include_once("inc/products/order.php") ?>
+                <?php include_once("inc/checkout/list.php") ?>
             </div>
         <?php endif; ?>
     </div>
