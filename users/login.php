@@ -22,7 +22,7 @@
 
     <div class="md:w-1/3 max-md:px-4 mx-auto mt-4">
         <?php include_once("../inc/message.php") ?>
-        <form action="code.php" method="post">
+        <form action="<?= BASE_URL ?>users/code.php" method="post">
             <div class="mb-3">
                 <label for="email">Email</label>
                 <input type="email" class="w-full border py-2 px-4 pt-2 rounded outline-none inline-block" name="email">

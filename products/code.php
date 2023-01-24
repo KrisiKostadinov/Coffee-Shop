@@ -7,18 +7,19 @@ session_start();
 if ( !empty($_POST) && isset($_POST["create"]) ) {
 
     $name = $_POST["name"];
+    $slug = $_POST["slug"];
     $price = $_POST["price"];
     $quantity = $_POST["quantity"];
     $user_id = $_SESSION["user"]["id"];
 
-    if ( empty($name) || empty($price) || empty($quantity) ) {
+    if ( empty($name) || empty($price) || empty($quantity) || empty($slug) ) {
         $_SESSION["message"] = "All fields are required";
         redirect("products/create");
     }
 
     $query = "INSERT INTO products
-        (name, price, quantity, user_id)
-        VALUES ('$name', '$price', $quantity, $user_id)";
+        (name, slug, price, quantity, user_id)
+        VALUES ('$name', '$slug', '$price', $quantity, $user_id)";
     try {
         $query_run = mysqli_query($conn, $query);
     } catch (Exception $error) {

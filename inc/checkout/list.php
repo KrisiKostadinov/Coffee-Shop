@@ -51,7 +51,12 @@ if ( $query_run ) {
         </table>
     </div>
     <div class="flex items-center justify-between mt-5">
-        <a href="#" class="text-white bg-orange-500 px-5 py-3 rounded shadow">Proceed Order</a>
+        <?php if ( count($products) > 0 ): ?>
+            <form action="<?= BASE_URL ?>checkout/code.php" method="post">
+                <input type="hidden" name="money" value="<?= $total_sum["total"] ?>">
+                <button name="completion" class="text-white bg-orange-500 px-5 py-3 rounded shadow">Proceed Order</button>
+            </form>
+        <?php endif; ?>
         <div class="text-right">
             <p class="text-2xl">$<?= number_format($total_sum["total"], 2) ?></p>
         </div>
